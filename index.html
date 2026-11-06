@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="EV帳簿">
+<meta name="theme-color" content="#0a7c86">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAWfmNhQlgAABZ+anVtYgAAAB5qdW1kYzJwYQARABCAAACqADibcQNjMnBhAAAAFlhqdW1iAAAAR2p1bWRjMm1hABEAEIAAAKoAOJtxA3VybjpjMnBhOjVhZjUxZWJiLTc5ZGQtNGNmOS04ZWRlLWExMWE4ODkyZjlkOAAAAAOTanVtYgAAAClqdW1kYzJhcwARABCAAACqADibcQNjMnBhLmFzc2VydGlvbnMAAAAAuGp1bWIAAABEanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5pbmdyZWRpZW50LnYzAAAAABhjMnNo24dR0sS6cBNphGtRcGx7RwAAAGxjYm9yo2lkYzpmb3JtYXRpaW1hZ2UvcG5namluc3RhbmNlSUR4LHhtcDppaWQ6YjUxMDQ4NjEtZTk1ZC00MzExLTllYjktODZlNTRmODNhYjFhbHJlbGF0aW9uc2hpcGhwYXJlbnRPZgAAAeJqdW1iAAAAQWp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuYWN0aW9ucy52MgAAAAAYYzJzaOAC4DHSQMEWWrAJMfm7r7oAAAGZY2JvcqJnYWN0aW9uc4KiZmFjdGlvbmtjMnBhLm9wZW5lZGpwYXJhbWV0ZXJzoWtpbmdyZWRpZW50c4GiY3VybHgtc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5pbmdyZWRpZW50LnYzZGhhc2hYIFRwQ4ZAGnhfKDqfvR2VkrQiAf6HSoYP6lhvdkt9bv5PpGZhY3Rpb254HWNvbS5hbnRocm9waWMuY2xhdWRlLnByb3ZpZGVkanBhcmFtZXRlcnOheB9jb20uYW50aHJvcGljLm9yaWdpbi1jb25maWRlbmNlZ3Vua25vd25rZGVzY3JpcHRpb254ZkNsYXVkZSBwcm92aWRlZCB0aGlzIGZpbGUgYXQgdGhlIHJlcXVlc3Qgb2YgYSB1c2VyIGFuZCBtYXkgaGF2ZSBjcmVhdGVkIG9yIG1vZGlmaWVkIHRoZSBmaWxlIGNvbnRlbnRzLm1zb2Z0d2FyZUFnZW50oWRuYW1lZkNsYXVkZXJhbGxBY3Rpb25zSW5jbHVkZWT1AAAAyGp1bWIAAABAanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5oYXNoLmRhdGEAAAAAGGMyc2iBaysClBsMY5LXx+0oTA8JAAAAgGNib3KlY2FsZ2ZzaGEyNTZjcGFkTQAAAAAAAAAAAAAAAABkaGFzaFgg02lZHv4pBA8MgMqNcxnny8d52dtbd8gOxRn9q4ezcOlkbmFtZW5qdW1iZiBtYW5pZmVzdGpleGNsdXNpb25zgaJlc3RhcnQYIWZsZW5ndGgZFooAAAI+anVtYgAAACdqdW1kYzJjbAARABCAAACqADibcQNjMnBhLmNsYWltLnYyAAAAAg9jYm9ypWNhbGdmc2hhMjU2aXNpZ25hdHVyZXhNc2VsZiNqdW1iZj0vYzJwYS91cm46YzJwYTo1YWY1MWViYi03OWRkLTRjZjktOGVkZS1hMTFhODg5MmY5ZDgvYzJwYS5zaWduYXR1cmVqaW5zdGFuY2VJRHgseG1wOmlpZDoxY2Q4ZjcyZC0wYWVlLTQ5MDMtOGIyZi1lZjQ4M2JkZTUwZDlyY3JlYXRlZF9hc3NlcnRpb25zg6JjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggVHBDhkAaeF8oOp+9HZWStCIB/odKhg/qWG92S31u/k+iY3VybHgqc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5hY3Rpb25zLnYyZGhhc2hYIADbZW9dl0d5o0K8q+/zKWmScfwmbDhTJuygXP5DIfoDomN1cmx4KXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaGFzaC5kYXRhZGhhc2hYIBIRC/for2/wBzpmp+cmusw0SU1eCHTMxN3fBR4H8eB3dGNsYWltX2dlbmVyYXRvcl9pbmZvo2RuYW1lb0FudGhyb3BpYyBGaWxlc2d2ZXJzaW9uZTEuMC4wa3NwZWNWZXJzaW9uZTIuNC4wAAAQOGp1bWIAAAAoanVtZGMyY3MAEQAQgAAAqgA4m3EDYzJwYS5zaWduYXR1cmUAAAAQCGNib3LShFkCEqIBJhghWQIKMIICBjCCAY2gAwIBAgIUQOWgCu7COdC+uIP6BkIFPWdVEwAwCgYIKoZIzj0EAwMwSTEXMBUGA1UEChMOQW50aHJvcGljLCBQQkMxLjAsBgNVBAMTJUFudGhyb3BpYyBDb250ZW50IENyZWRlbnRpYWxzIFJvb3QgQ0EwHhcNMjYwODA3MTg0MzU2WhcNMjgwODA2MTk0MzU2WjBEMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEpMCcGA1UEAxMgQW50aHJvcGljIENsYXVkZSBDb250ZW50IFNpZ25pbmcwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASYegpry1AYBRTVNL1CpTlbROnY3dey+UrsF9C3phYrATN3ZHf93Mo8RQN0KOUuOn19P4oWNFWe5n2/She9N7eTo1gwVjAOBgNVHQ8BAf8EBAMCB4AwFQYDVR0lBA4wDAYKKwYBBAGD6F4CATAMBgNVHRMBAf8EAjAAMB8GA1UdIwQYMBaAFM5R4gSBTmRbI/jjxM+aPpzB11zCMAoGCCqGSM49BAMDA2cAMGQCMDFzHRSeAXrSy1WOzkbhPZ6Km2wGTmZ/2gK18k8BQGXyqz88Rdrz6CTX9flAnYNVxgIwcF9c3fVhqmJKpi+UhasNUMko69cyX6STPfta3Q8EjyzDjzoyrol46FP6VFHhvUcJoWNwYWRZDZ4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2WEBoh//SCsBJz/YTRgVKzBpbRoixr/KmkAQggUhB9XEtMXe+RdPws/Lw6ZUAm/nqCiAUWw5QzmH7DEzxgk9grYKXRw5K0QAAA7tJREFUeJzt3UFu3DAQRNFyls6JA9irAM6Js89iAmPsmaYokpLIrv9OoMVHqbUYzMvr24eAZ35c/QCYF3EgRBwIEQdCxIEQcSBEHAgRB0LEgRBxIEQcCBEHQsSBEHEgRBwIEQdCxIEQcSBEHAgRB0LEgRBxNPr7+9fVj3A44mjhUIaIo4FJGSKOZj/f/1z9CIcjjn18ZkPEsYtVGSKOem5liDhQQBxVDGdDxFHjsQyHTxURxybPzbghDoSIo8R5NkQcBeZliDgihTJMrlERBwqI4wleKDfE8R1lfCKOLyjjHnHs43ONijjuMRvfEMd/lPGIOCTKCBAHZYSIAyH3OHbNhtWniszj4IVS5hsHZWzyjQObTONgNmo4xtFWhts1KsM42Ix6dnGgnlcczMYuRnFQxl4ucVBGA5c4Ohl+qsgkDmajTf44KKNZ8jgoo0fmOCijU+Y4RvG8RpU4DmajX844KGOIhHFQxigJ48Ao2eIYPhu216iSxcELZaw8cVDGcHniwHBJ4mA2jpAhDso4yPJxHFqG86eKEsSB47y8vn1c/Qztsr5QJlmshZeDMo62ahyUcYJV48AJloyD2TjHenFQxmkWi4MyzrRSHFnLmNZKcWQ152xooTiyzsa0ZWiVOCjjEgvEQRlXWSAOXGX2OJiNC00dB2Vca944KONy88aBy00aB7MxgxnjoIxJTBcHZcxjujhSWrEMzRZH1tlY1ERxZC1j0dnQ6j9N6HRCjuuWoamWI5+ly5BzHEfPxuplyDkObCKOQySYDRHHEXKUIds4jjs40pQh2zhQgzhGyjQbIo6BkpUhzziOODjylSHPOIZLWYaIAwXE0SvrbIg4OiUuQ4ZxDLxGc5chwzhQjzgapZ8NEUcbhzLkFseQg8OkDLnF0c+nDBEHCohjB6vZkFUcnQeHWxmyiqOHYRkiDhQQxzbP2ZBPHM0Hh20Z8omjjXMZIo4C8zJEHCggjueYDZnEsfcapYwbizh2oYxPxIEQcXzBbNzLH0f9wUEZ3+SPoxJlPCIOiTICxIFQ8jhqDg5mI5I8jk2UUWAdB2WU+cZBGZt848CmzHEUrlFmo0bmOCKUUckuDsqoZxcH6qWN4+nBwWzskjaOR5Sxl0sclNHAIg7KaJMzjqx/NHmynHHcYzaaJY+DMnpkjoMyOiWMg4NjlIRx3DAb/XLGQRlDWP+XPcpyLgeGIA6EiAMh4kCIOBAiDoSIAyHiQIg4ECIOhIgDIeJAiDgQIg6EiAMh4kCIOBAiDoSIAyHiQOgfd9jkpNH0svcAAAAASUVORK5CYII=">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAWfmNhQlgAABZ+anVtYgAAAB5qdW1kYzJwYQARABCAAACqADibcQNjMnBhAAAAFlhqdW1iAAAAR2p1bWRjMm1hABEAEIAAAKoAOJtxA3VybjpjMnBhOjVhZjUxZWJiLTc5ZGQtNGNmOS04ZWRlLWExMWE4ODkyZjlkOAAAAAOTanVtYgAAAClqdW1kYzJhcwARABCAAACqADibcQNjMnBhLmFzc2VydGlvbnMAAAAAuGp1bWIAAABEanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5pbmdyZWRpZW50LnYzAAAAABhjMnNo24dR0sS6cBNphGtRcGx7RwAAAGxjYm9yo2lkYzpmb3JtYXRpaW1hZ2UvcG5namluc3RhbmNlSUR4LHhtcDppaWQ6YjUxMDQ4NjEtZTk1ZC00MzExLTllYjktODZlNTRmODNhYjFhbHJlbGF0aW9uc2hpcGhwYXJlbnRPZgAAAeJqdW1iAAAAQWp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuYWN0aW9ucy52MgAAAAAYYzJzaOAC4DHSQMEWWrAJMfm7r7oAAAGZY2JvcqJnYWN0aW9uc4KiZmFjdGlvbmtjMnBhLm9wZW5lZGpwYXJhbWV0ZXJzoWtpbmdyZWRpZW50c4GiY3VybHgtc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5pbmdyZWRpZW50LnYzZGhhc2hYIFRwQ4ZAGnhfKDqfvR2VkrQiAf6HSoYP6lhvdkt9bv5PpGZhY3Rpb254HWNvbS5hbnRocm9waWMuY2xhdWRlLnByb3ZpZGVkanBhcmFtZXRlcnOheB9jb20uYW50aHJvcGljLm9yaWdpbi1jb25maWRlbmNlZ3Vua25vd25rZGVzY3JpcHRpb254ZkNsYXVkZSBwcm92aWRlZCB0aGlzIGZpbGUgYXQgdGhlIHJlcXVlc3Qgb2YgYSB1c2VyIGFuZCBtYXkgaGF2ZSBjcmVhdGVkIG9yIG1vZGlmaWVkIHRoZSBmaWxlIGNvbnRlbnRzLm1zb2Z0d2FyZUFnZW50oWRuYW1lZkNsYXVkZXJhbGxBY3Rpb25zSW5jbHVkZWT1AAAAyGp1bWIAAABAanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5oYXNoLmRhdGEAAAAAGGMyc2iBaysClBsMY5LXx+0oTA8JAAAAgGNib3KlY2FsZ2ZzaGEyNTZjcGFkTQAAAAAAAAAAAAAAAABkaGFzaFgg02lZHv4pBA8MgMqNcxnny8d52dtbd8gOxRn9q4ezcOlkbmFtZW5qdW1iZiBtYW5pZmVzdGpleGNsdXNpb25zgaJlc3RhcnQYIWZsZW5ndGgZFooAAAI+anVtYgAAACdqdW1kYzJjbAARABCAAACqADibcQNjMnBhLmNsYWltLnYyAAAAAg9jYm9ypWNhbGdmc2hhMjU2aXNpZ25hdHVyZXhNc2VsZiNqdW1iZj0vYzJwYS91cm46YzJwYTo1YWY1MWViYi03OWRkLTRjZjktOGVkZS1hMTFhODg5MmY5ZDgvYzJwYS5zaWduYXR1cmVqaW5zdGFuY2VJRHgseG1wOmlpZDoxY2Q4ZjcyZC0wYWVlLTQ5MDMtOGIyZi1lZjQ4M2JkZTUwZDlyY3JlYXRlZF9hc3NlcnRpb25zg6JjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggVHBDhkAaeF8oOp+9HZWStCIB/odKhg/qWG92S31u/k+iY3VybHgqc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5hY3Rpb25zLnYyZGhhc2hYIADbZW9dl0d5o0K8q+/zKWmScfwmbDhTJuygXP5DIfoDomN1cmx4KXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaGFzaC5kYXRhZGhhc2hYIBIRC/for2/wBzpmp+cmusw0SU1eCHTMxN3fBR4H8eB3dGNsYWltX2dlbmVyYXRvcl9pbmZvo2RuYW1lb0FudGhyb3BpYyBGaWxlc2d2ZXJzaW9uZTEuMC4wa3NwZWNWZXJzaW9uZTIuNC4wAAAQOGp1bWIAAAAoanVtZGMyY3MAEQAQgAAAqgA4m3EDYzJwYS5zaWduYXR1cmUAAAAQCGNib3LShFkCEqIBJhghWQIKMIICBjCCAY2gAwIBAgIUQOWgCu7COdC+uIP6BkIFPWdVEwAwCgYIKoZIzj0EAwMwSTEXMBUGA1UEChMOQW50aHJvcGljLCBQQkMxLjAsBgNVBAMTJUFudGhyb3BpYyBDb250ZW50IENyZWRlbnRpYWxzIFJvb3QgQ0EwHhcNMjYwODA3MTg0MzU2WhcNMjgwODA2MTk0MzU2WjBEMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEpMCcGA1UEAxMgQW50aHJvcGljIENsYXVkZSBDb250ZW50IFNpZ25pbmcwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASYegpry1AYBRTVNL1CpTlbROnY3dey+UrsF9C3phYrATN3ZHf93Mo8RQN0KOUuOn19P4oWNFWe5n2/She9N7eTo1gwVjAOBgNVHQ8BAf8EBAMCB4AwFQYDVR0lBA4wDAYKKwYBBAGD6F4CATAMBgNVHRMBAf8EAjAAMB8GA1UdIwQYMBaAFM5R4gSBTmRbI/jjxM+aPpzB11zCMAoGCCqGSM49BAMDA2cAMGQCMDFzHRSeAXrSy1WOzkbhPZ6Km2wGTmZ/2gK18k8BQGXyqz88Rdrz6CTX9flAnYNVxgIwcF9c3fVhqmJKpi+UhasNUMko69cyX6STPfta3Q8EjyzDjzoyrol46FP6VFHhvUcJoWNwYWRZDZ4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD2WEBoh//SCsBJz/YTRgVKzBpbRoixr/KmkAQggUhB9XEtMXe+RdPws/Lw6ZUAm/nqCiAUWw5QzmH7DEzxgk9grYKXRw5K0QAAA7tJREFUeJzt3UFu3DAQRNFyls6JA9irAM6Js89iAmPsmaYokpLIrv9OoMVHqbUYzMvr24eAZ35c/QCYF3EgRBwIEQdCxIEQcSBEHAgRB0LEgRBxIEQcCBEHQsSBEHEgRBwIEQdCxIEQcSBEHAgRB0LEgRBxNPr7+9fVj3A44mjhUIaIo4FJGSKOZj/f/1z9CIcjjn18ZkPEsYtVGSKOem5liDhQQBxVDGdDxFHjsQyHTxURxybPzbghDoSIo8R5NkQcBeZliDgihTJMrlERBwqI4wleKDfE8R1lfCKOLyjjHnHs43ONijjuMRvfEMd/lPGIOCTKCBAHZYSIAyH3OHbNhtWniszj4IVS5hsHZWzyjQObTONgNmo4xtFWhts1KsM42Ix6dnGgnlcczMYuRnFQxl4ucVBGA5c4Ohl+qsgkDmajTf44KKNZ8jgoo0fmOCijU+Y4RvG8RpU4DmajX844KGOIhHFQxigJ48Ao2eIYPhu216iSxcELZaw8cVDGcHniwHBJ4mA2jpAhDso4yPJxHFqG86eKEsSB47y8vn1c/Qztsr5QJlmshZeDMo62ahyUcYJV48AJloyD2TjHenFQxmkWi4MyzrRSHFnLmNZKcWQ152xooTiyzsa0ZWiVOCjjEgvEQRlXWSAOXGX2OJiNC00dB2Vca944KONy88aBy00aB7MxgxnjoIxJTBcHZcxjujhSWrEMzRZH1tlY1ERxZC1j0dnQ6j9N6HRCjuuWoamWI5+ly5BzHEfPxuplyDkObCKOQySYDRHHEXKUIds4jjs40pQh2zhQgzhGyjQbIo6BkpUhzziOODjylSHPOIZLWYaIAwXE0SvrbIg4OiUuQ4ZxDLxGc5chwzhQjzgapZ8NEUcbhzLkFseQg8OkDLnF0c+nDBEHCohjB6vZkFUcnQeHWxmyiqOHYRkiDhQQxzbP2ZBPHM0Hh20Z8omjjXMZIo4C8zJEHCggjueYDZnEsfcapYwbizh2oYxPxIEQcXzBbNzLH0f9wUEZ3+SPoxJlPCIOiTICxIFQ8jhqDg5mI5I8jk2UUWAdB2WU+cZBGZt848CmzHEUrlFmo0bmOCKUUckuDsqoZxcH6qWN4+nBwWzskjaOR5Sxl0sclNHAIg7KaJMzjqx/NHmynHHcYzaaJY+DMnpkjoMyOiWMg4NjlIRx3DAb/XLGQRlDWP+XPcpyLgeGIA6EiAMh4kCIOBAiDoSIAyHiQIg4ECIOhIgDIeJAiDgQIg6EiAMh4kCIOBAiDoSIAyHiQOgfd9jkpNH0svcAAAAASUVORK5CYII=">
+<title>EV帳簿</title>
+<style>
+:root{--bg:#eef2f4;--card:#fff;--ink:#14262e;--mute:#5d707a;--line:#d5dde1;--ev:#0a7c86;--gas:#c9731a;--onev:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#10191d;--card:#18252b;--ink:#e6eef1;--mute:#93a6ae;--line:#2b3b43;--ev:#3cc0cc;--gas:#e69a4c;--onev:#06242a}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#10191d;--card:#18252b;--ink:#e6eef1;--mute:#93a6ae;--line:#2b3b43;--ev:#3cc0cc;--gas:#e69a4c;--onev:#06242a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 "Hiragino Sans","Noto Sans JP","Yu Gothic",system-ui,sans-serif;font-variant-numeric:tabular-nums}
+main{max-width:560px;margin:0 auto;padding:16px 16px 48px}
+h1{font-size:18px;margin:4px 0 12px;letter-spacing:.02em}
+.hero{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px}
+.hero .lead{color:var(--mute);font-size:13px}
+.big{font-size:44px;font-weight:700;line-height:1.15;color:var(--ev);margin:2px 0 12px}
+.big small{font-size:18px;font-weight:600;margin-left:4px;color:var(--ink)}
+.bar{margin:8px 0}
+.bar .t{display:flex;justify-content:space-between;font-size:13px;margin-bottom:3px}
+.bar .b{height:12px;border-radius:6px;background:var(--line);overflow:hidden}
+.bar .b i{display:block;height:100%;border-radius:6px}
+.sub{margin:12px 0 0;font-size:13px;color:var(--mute)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.stat .k{font-size:12px;color:var(--mute)}
+.stat .v{font-size:22px;font-weight:700}
+.stat .v small{font-size:12px;font-weight:500;color:var(--mute);margin-left:2px}
+.stat .n{font-size:12px;color:var(--mute)}
+.all{font-size:13px;color:var(--mute);margin:0 2px 14px}
+.tabs{display:flex;gap:6px;margin:6px 0 10px}
+.tabs button{flex:1;padding:9px 0;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;font:inherit;font-weight:600}
+.tabs button[aria-selected="true"]{background:var(--ev);border-color:var(--ev);color:var(--onev)}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--ev);outline-offset:2px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px}
+.row{display:grid;grid-template-columns:64px 1fr auto;gap:8px;align-items:baseline;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);padding:9px 2px;color:inherit;font:inherit}
+.row:last-child{border-bottom:0}
+.row .d{color:var(--mute);font-size:13px}
+.row .m{font-size:13px;color:var(--mute)}
+.row .c{font-weight:600}
+.row .ev{color:var(--ev);font-weight:600}
+label{display:block;font-size:13px;color:var(--mute);margin:10px 0 3px}
+input,textarea{width:100%;font-size:16px;line-height:1.4;font-family:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+textarea{height:110px;font-size:12px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn{margin-top:14px;padding:12px 16px;border:0;border-radius:10px;background:var(--ev);color:var(--onev);font:inherit;font-weight:700;width:100%}
+.btn.sec{background:none;border:1px solid var(--line);color:var(--ink);font-weight:600;margin-top:8px}
+.btn.del{background:none;border:1px solid var(--gas);color:var(--gas);margin-top:8px}
+h2{font-size:14px;margin:18px 0 0}
+.note{font-size:12px;color:var(--mute);margin:6px 0 0}
+.empty{color:var(--mute);padding:14px 4px}
+.hero+.hero{margin-top:12px}
+#s3{margin-bottom:14px}
+.mon{display:grid;grid-template-columns:46px 1fr 44px;gap:8px;align-items:center;font-size:13px;margin:5px 0}
+.mon b{text-align:right}
+.mon .b{height:12px;border-radius:6px;background:var(--line);overflow:hidden}
+.mon .b i{display:block;height:100%;border-radius:6px;background:var(--ev)}
+.hint{font-size:12px;color:var(--mute);margin:12px 0 2px}
+input[type="date"]{display:block;min-width:0;max-width:100%;height:44px;text-align:left;-webkit-appearance:none;appearance:none}
+summary{cursor:pointer;margin-top:14px;font-size:13px;color:var(--mute)}
+</style>
+</head>
+<body>
+<main>
+<h1>EV帳簿</h1>
+<section class="hero" id="s1"></section>
+<section class="hero" id="s2"></section>
+<section class="hero" id="s3"></section>
+<div class="tabs" role="tablist">
+<button role="tab" data-t="list" aria-selected="true">記録</button>
+<button role="tab" data-t="add" aria-selected="false">追加</button>
+<button role="tab" data-t="set" aria-selected="false">設定</button>
+</div>
+<div class="panel" id="p-list"></div>
+<div class="panel" id="p-add" hidden></div>
+<div class="panel" id="p-set" hidden></div>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script>
+const KEY='evbook-v1';
+function seed(){return{s:{batt:14.8,chg:3,home:30,range:51,hrs:4.9,kwhkm:0.274,yearkm:10000},o:{start:new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10),dist:0,odo:0,fuel:0,price:0,ext:0,kwh:0},r:[]}}
+let S=null;
+try{S=JSON.parse(localStorage.getItem(KEY))}catch(e){}
+if(!S||!S.r||!S.s||!S.o)S=seed();
+if(S.o.start==null)S.o.start=(S.r[0]&&S.r[0].d)||new Date().toISOString().slice(0,10);
+if(S.o.dist==null)S.o.dist=S.o.odo;
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+const $=id=>document.getElementById(id);
+const yen=n=>(n<0?'-':'')+'¥'+Math.abs(Math.round(n)).toLocaleString('ja-JP');
+const num=(n,d=0)=>n.toLocaleString('ja-JP',{minimumFractionDigits:d,maximumFractionDigits:d});
+const val=v=>v===''||v==null||isNaN(+v)?null:+v;
+
+function calc(){
+  const s=S.s,o=S.o,c2=s.range/s.batt;
+  let prev=o.odo;
+  const rows=S.r.map(r=>{
+    const dist=r.odo-prev;prev=r.odo;
+    const k=(r.sb!=null&&r.sa!=null)?(r.sa-r.sb)/100:0;
+    const N=s.chg*s.hrs*k,c2r=(r.rg>0&&r.sa>0)?r.rg/(s.batt*r.sa/100):c2,M=N*c2r,O=N*(r.kp!=null?r.kp:s.home);
+    return{...r,dist,N,M,O,cost:(r.fuel||0)+O+(r.ext||0),lit:(r.fuel&&r.price)?r.fuel/r.price:0};
+  });
+  const sum=f=>rows.reduce((a,r)=>a+f(r),0);
+  const t={dist:sum(r=>r.dist),M:sum(r=>r.M),N:sum(r=>r.N),O:sum(r=>r.O),fuel:sum(r=>r.fuel||0),ext:sum(r=>r.ext||0),lit:sum(r=>r.lit)};
+  const ps=rows.filter(r=>r.price).map(r=>r.price);
+  const avgP=ps.length?ps.reduce((a,b)=>a+b,0)/ps.length:0;
+  const gasKmL=t.lit>0?(t.dist-t.M)/t.lit:0;
+  const gasPerKm=gasKmL>0?avgP/gasKmL:0;
+  const evPerKm=t.dist>0?(t.dist*s.kwhkm*s.home+t.fuel)/t.dist:0;
+  const actual=t.fuel+t.O+t.ext;
+  const gasOnly=gasPerKm*t.dist;
+  const M0=o.kwh*(o.range>0?o.range/s.batt:c2);
+  const d0=o.dist!=null?o.dist:o.odo,lit0=o.price>0?o.fuel/o.price:0;
+  const all={dist:t.dist+d0,M:t.M+M0,cost:actual+o.fuel+o.ext,fuel:t.fuel+o.fuel,lit:t.lit+lit0,d0,M0};
+  const lastD=rows.length?rows[rows.length-1].d:null;
+  const days=lastD&&o.start?Math.round((new Date(lastD)-new Date(o.start))/864e5)+1:0;
+  const gk=all.lit>0?(all.dist-all.M)/all.lit:0,pr=all.lit>0?all.fuel/all.lit:0,gpk=gk>0?pr/gk:0;
+  return{rows,all,days,t:{dist:all.dist,M:all.M,fuel:all.fuel,O:t.O,ext:t.ext+o.ext},
+    avgP:pr,gasKmL:gk,gasPerKm:gpk,actual:all.cost,gasOnly:gpk*all.dist,
+    ratio:all.dist>0?all.M/all.dist:0};
+}
+
+function renderSummary(c){
+  const t=c.t,s=S.s,rows=c.rows;
+  const ok=c.gasKmL>0&&t.dist>0;
+  const bar=(l,v,max,col,txt)=>`<div class="bar"><div class="t"><span>${l}</span><b>${txt}</b></div><div class="b"><i style="width:${Math.max(0,Math.min(100,v/max*100))}%;background:var(--${col})"></i></div></div>`;
+  if(!ok){
+    $('s1').innerHTML=$('s2').innerHTML='<div class="lead">給油の記録（給油代と単価）を1回以上入れると、燃費と差額が出ます。</div>';
+  }else{
+    const real=c.actual/t.dist,eff=c.avgP/real,sv=c.gasOnly-c.actual,mx=Math.max(eff,c.gasKmL);
+    const f365=c.days>=30?365/c.days:0;
+    const yr=f365?`<div class="hint">1年に換算すると（${num(c.days)}日分のデータから）</div><p class="sub" style="margin:2px 0 0">走行 約${num(t.dist*f365)}km ・ ガソリンだけなら ${yen(c.gasOnly*f365)} → 実際 ${yen(c.actual*f365)}。差額は年 約${yen(sv*f365)}です。${c.days<330?'季節で乗り方が変わるため、1年分たまるまでは目安です。':''}</p>`:'<div class="hint">使い始めた日から30日分たまると、1年換算の見込みが出ます。</div>';
+    $('s1').innerHTML=`<div class="lead">① 燃費はどれだけ変わった？</div>
+<div class="big">${num(eff,1)}<small>km/L相当</small></div>
+${bar('ガソリンで走る分の燃費',c.gasKmL,mx,'gas',num(c.gasKmL,1)+' km/L')}
+${bar('実際の支出をガソリンに直した燃費',eff,mx,'ev',num(eff,1)+' km/L')}
+<p class="sub">電気を使えるおかげで、ガソリン1Lあたり約${num(eff/c.gasKmL,2)}倍の距離を走れています。</p>`;
+    const mx2=Math.max(c.gasOnly,c.actual,1);
+    $('s2').innerHTML=`<div class="lead">② ガソリンだけと比べていくら安い？</div>
+<div class="big">${yen(Math.abs(sv))}<small>${sv>=0?'安い':'高い'}</small></div>
+${bar('ガソリンだけで走ったなら',c.gasOnly,mx2,'gas',yen(c.gasOnly))}
+${bar('実際にかかった費用',c.actual,mx2,'ev',yen(c.actual))}
+<p class="sub">内訳：ガソリン代 ${yen(t.fuel)} ＋ 電気代 ${yen(t.O+t.ext)}。1kmあたり ${num(c.gasPerKm,1)}円 → ${num(real,1)}円。</p>${yr}`;
+  }
+  const mm={};
+  rows.forEach(r=>{const k=r.d.slice(0,7);const m=mm[k]=mm[k]||{d:0,m:0};m.d+=r.dist;m.m+=r.M});
+  const mon=Object.keys(mm).sort().map(k=>{const p=mm[k].d>0?mm[k].m/mm[k].d*100:0;return`<div class="mon"><span>${+k.slice(5)}月</span><div class="b"><i style="width:${Math.min(100,p)}%"></i></div><b>${num(p)}%</b></div>`}).join('');
+  const a=c.all,p0=a.d0>0?a.M0/a.d0*100:0;
+  const m0=a.d0>0?`<div class="mon"><span>開始前</span><div class="b"><i style="width:${Math.min(100,p0)}%"></i></div><b>${num(p0)}%</b></div>`:'';
+  $('s3').innerHTML=`<div class="lead">③ 電気で何km走った？</div>
+<div class="big">${num(t.M)}<small>km（${num(c.ratio*100,1)}%）</small></div>
+${bar('全期間の走行 '+num(t.dist)+'km のうち電気',t.M,Math.max(t.dist,1),'ev',num(c.ratio*100,1)+'%')}
+<p class="sub">ガソリンで走ったのは ${num(Math.max(t.dist-t.M,0))}km。使い始めてから今までの、すべての記録を合わせた数字です。</p>
+<div class="hint">月ごとの電気走行比（乗り方の違い）</div>${m0}${mon}`;
+}
+
+let tab='list',editing=null,armed=null;
+function renderList(c){
+  if(!c.rows.length){$('p-list').innerHTML='<div class="empty">まだ記録がありません。「追加」から入力してください。</div>';return}
+  $('p-list').innerHTML=c.rows.map((r,i)=>[r,i]).reverse().map(([r,i])=>{
+    const dt=r.d.slice(5).replace('-','/');
+    const ev=r.dist>0&&r.M>0?num(r.M/r.dist*100)+'%':'-';
+    return`<button class="row" data-i="${i}"><span class="d">${dt}</span><span class="m">+${num(r.dist,1)}km ・ 電気 <span class="ev">${ev}</span>${r.fuel?' ・ 給油':''}</span><span class="c">${yen(r.cost)}</span></button>`;
+  }).join('');
+}
+const today=()=>new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10);
+function f(id,label,v,extra=''){return`<label for="${id}">${label}</label><input id="${id}" inputmode="decimal" value="${v==null?'':v}" ${extra}>`}
+function renderAdd(){
+  const last=[...S.r].reverse(),lp=last.find(x=>x.price),lk=last.find(x=>x.kp!=null),lg=last.find(x=>x.rg!=null);
+  const r=editing!=null?S.r[editing]:{d:today(),price:lp?lp.price:null,kp:lk?lk.kp:S.s.home,rg:lg?lg.rg:S.s.range};
+  $('p-add').innerHTML=`<b>${editing!=null?'記録を編集':'記録を追加'}</b>
+<label for="a-d">日付</label><input id="a-d" type="date" value="${r.d}">
+${f('a-odo','現在のオドメーター (km)',r.odo)}
+<div class="two"><div>${f('a-sb','充電前の残量 (%)',r.sb)}</div><div>${f('a-sa','充電後の残量 (%)',r.sa)}</div></div>
+${f('a-rg','充電後に車が表示した電気での航続距離 (km)',r.rg!=null?r.rg:S.s.range)}
+<div class="two"><div>${f('a-fuel','給油代 (円)',r.fuel)}</div><div>${f('a-price','ガソリン単価 (円/L)',r.price)}</div></div>
+${f('a-kp','家の電気単価 (円/kWh)',r.kp!=null?r.kp:S.s.home)}
+${f('a-ext','外で充電した代金 (円)',r.ext)}
+<p class="note">単価は前回の値が入っています。変わったときだけ直してください。給油や外充電がない日は空欄のままで大丈夫です。家での充電量は残量の差から計算します。</p>
+<button class="btn" id="a-save">${editing!=null?'変更を保存':'記録を保存'}</button>
+${editing!=null?'<button class="btn sec" id="a-cancel">編集をやめる</button><button class="btn del" id="a-del">この記録を削除</button>':''}`;
+  $('a-save').onclick=()=>{
+    const odo=val($('a-odo').value),d=$('a-d').value;
+    if(!d||odo==null){alert('日付とオドメーターを入力してください。');return}
+    const fu=val($('a-fuel').value);
+    const rec={d,odo,sb:val($('a-sb').value),sa:val($('a-sa').value),fuel:fu,price:fu?val($('a-price').value):null,kp:val($('a-kp').value),rg:val($('a-rg').value),ext:val($('a-ext').value)};
+    if(editing!=null)S.r[editing]=rec;else S.r.push(rec);
+    S.r.sort((a,b)=>a.d<b.d?-1:a.d>b.d?1:a.odo-b.odo);
+    editing=null;save();go('list');
+  };
+  if(editing!=null){
+    $('a-cancel').onclick=()=>{editing=null;go('list')};
+    $('a-del').onclick=e=>{
+      if(armed!==editing){armed=editing;e.target.textContent='もう一度押すと削除します';return}
+      S.r.splice(editing,1);armed=null;editing=null;save();go('list');
+    };
+  }
+}
+const SET=[['s','batt','バッテリー容量 (kWh)'],['s','chg_','充電器の出力 (kW)'],['s','home','家の電気単価 (円/kWh)'],['s','range','直近の電気での航続距離 (km)'],['s','hrs','0→100%の充電時間 (時間)'],['s','kwhkm','1kmあたり電力量 (kWh/km)']];
+const OPEN=[['odo','記録開始時のオドメーター (km)'],['dist','それまでに走った距離 (km)'],['range','その期間の満充電時の航続距離 (km・空欄なら初期値)'],['fuel','それまでの給油代 (円)'],['price','それまでのガソリン単価 (円/L)'],['ext','それまでの外充電代 (円)'],['kwh','それまでの充電量 (kWh)']];
+function renderSet(){
+  $('p-set').innerHTML=`<b>計算の設定</b>
+${[['batt','バッテリー容量 (kWh)'],['chg','充電器の出力 (kW)'],['home','家の電気単価の初期値 (円/kWh)'],['range','航続距離の初期値（満充電で車が表示する値・km）'],['hrs','0→100%の充電時間 (時間)']].map(a=>f('s-'+a[0],a[1],S.s[a[0]])).join('')}
+<h2>使い始め</h2>
+${f('o-start','使い始めた日（記録を始めた日）',S.o.start,'type="date"')}
+<details><summary>途中から記録を始めた場合だけ入力（新車は0のまま）</summary>
+${OPEN.map(a=>f('o-'+a[0],a[1],S.o[a[0]])).join('')}
+</details>
+<h2>Excelに書き出し</h2>
+<p class="note">記録と計算結果を、Excelファイル（.xlsx）として保存します。</p>
+<button class="btn" id="xl">Excelファイルを保存</button>
+<label class="btn sec" style="display:block;text-align:center;margin:8px 0 0">Excelから読み込む<input type="file" id="xl-file" accept=".xlsx" hidden></label>
+<p class="note" id="xl-msg">このアプリで書き出したExcelを選んで復元できます。今のデータは置き換わります。</p>
+<button class="btn" id="xl-ok" hidden>この内容で置き換える</button>
+<h2>バックアップ</h2>
+<p class="note">データはこの端末のブラウザに保存されます。機種変更や削除に備えて、下の文字列をメモなどに貼って控えてください。</p>
+<textarea id="bk" readonly></textarea>
+<button class="btn sec" id="bk-copy">コピー</button>
+<p class="note">復元するときは、控えた文字列を下に貼り付けます。</p>
+<textarea id="rs"></textarea>
+<button class="btn sec" id="rs-go">貼り付けた内容で復元</button>
+<button class="btn del" id="rs-new">新車（ゼロ）から始める</button>
+<button class="btn del" id="rs-reset">すべて消して初期設定に戻す</button>`;
+  $('bk').value=JSON.stringify(S);
+  document.querySelectorAll('#p-set input').forEach(el=>el.onchange=()=>{
+    const [g,k]=[el.id[0],el.id.slice(2)],v=el.type==='date'?(el.value||null):val(el.value);
+    if(v==null){el.value=(g==='s'?S.s:S.o)[k];return}
+    (g==='s'?S.s:S.o)[k]=v;save();renderAll(false);$('bk').value=JSON.stringify(S);
+  });
+  $('bk-copy').onclick=()=>{$('bk').select();try{navigator.clipboard.writeText($('bk').value)}catch(e){try{document.execCommand('copy')}catch(_){}}$('bk-copy').textContent='コピーしました'};
+  $('rs-go').onclick=()=>{
+    try{const n=JSON.parse($('rs').value);if(!n.s||!n.o||!Array.isArray(n.r))throw 0;S=n;save();renderAll(true);alert('復元しました。')}
+    catch(e){alert('読み取れませんでした。バックアップの文字列を全部貼り付けてください。')}
+  };
+  $('rs-new').onclick=e=>{
+    if(armed!=='new'){armed='new';e.target.textContent='もう一度押すと、今のデータを消してゼロから始めます';return}
+    armed=null;S={s:{...S.s},o:{start:today(),dist:0,odo:0,fuel:0,price:0,ext:0,kwh:0},r:[]};save();renderAll(true);
+  };
+  $('rs-reset').onclick=e=>{
+    if(armed!=='reset'){armed='reset';e.target.textContent='もう一度押すとデータを置き換えます';return}
+    armed=null;S=seed();save();renderAll(true);
+  };
+}
+async function exportXlsx(btn){
+  if(typeof XLSX==='undefined'){alert('Excel出力の部品を読み込めませんでした。通信状況を確認して、ページを開き直してください。');return}
+  const dl={save:async({filename,data})=>{
+    const blob=new Blob([data],{type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+    const file=new File([blob],filename,{type:blob.type});
+    if(navigator.canShare&&navigator.canShare({files:[file]})){
+      try{await navigator.share({files:[file]});return}catch(e){if(e&&e.name==='AbortError')throw{code:'declined'}}
+    }
+    const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=filename;
+    document.body.appendChild(a);a.click();a.remove();
+  }};
+  const c=calc(),o=S.o,s=S.s,rows=c.rows;
+  const head=['日付','オドメーター(km)','走行距離(km)','給油代(円)','ガソリン単価(円/L)','給油量(L)','充電前(%)','充電後(%)','充電後の航続距離(km)','充電量(kWh)','電気走行距離(km)','家の電気単価(円/kWh)','家の電気代(円)','外充電代(円)','費用合計(円)','電気走行比(%)'];
+  const body=rows.map(r=>[r.d,r.odo,+r.dist.toFixed(1),r.fuel??'',r.price??'',r.lit?+r.lit.toFixed(2):'',r.sb??'',r.sa??'',r.rg??'',+r.N.toFixed(2),+r.M.toFixed(1),r.kp!=null?r.kp:s.home,Math.round(r.O),r.ext??'',Math.round(r.cost),r.dist>0&&r.M>0?+(r.M/r.dist*100).toFixed(1):'']);
+  const eff=c.actual>0&&c.t.dist>0?+(c.avgP/(c.actual/c.t.dist)).toFixed(2):'';
+  const sum=[['項目','値'],['使い始めた日',o.start],['最新の記録日',rows.length?rows[rows.length-1].d:''],['集計日数',c.days],['走行距離(km)',Math.round(c.t.dist)],['電気で走った距離(km)',Math.round(c.t.M)],['電気走行比(%)',+(c.ratio*100).toFixed(1)],['ガソリンで走る分の燃費(km/L)',+c.gasKmL.toFixed(2)],['実質燃費(km/L相当)',eff],['ガソリンだけの場合の費用(円)',Math.round(c.gasOnly)],['実際にかかった費用(円)',Math.round(c.actual)],['差額(円)',Math.round(c.gasOnly-c.actual)]];
+  const set=[['項目','値'],['使い始めた日',o.start],['バッテリー容量(kWh)',s.batt],['充電器の出力(kW)',s.chg],['家の電気単価の初期値(円/kWh)',s.home],['航続距離の初期値(km)',s.range],['0→100%の充電時間(h)',s.hrs],['記録開始時のオドメーター(km)',o.odo],['それまでに走った距離(km)',o.dist],['それまでの給油代(円)',o.fuel],['それまでのガソリン単価(円/L)',o.price],['それまでの外充電代(円)',o.ext],['それまでの充電量(kWh)',o.kwh],['その期間の航続距離(km)',o.range??'']];
+  const wb=XLSX.utils.book_new();
+  const add=(name,aoa,w)=>{const ws=XLSX.utils.aoa_to_sheet(aoa);ws['!cols']=w.map(n=>({wch:n}));XLSX.utils.book_append_sheet(wb,ws,name)};
+  add('記録',[head,...body],head.map(()=>16));
+  add('集計',sum,[32,16]);
+  add('設定',set,[34,16]);
+  const buf=XLSX.write(wb,{bookType:'xlsx',type:'array'});
+  try{await dl.save({filename:'EV帳簿_'+today()+'.xlsx',data:buf});btn.textContent='保存しました'}
+  catch(e){if(e&&e.code==='declined')return;alert('保存できませんでした（'+((e&&e.code)||'error')+'）。')}
+}
+let pendingX=null;
+function importXlsx(inp){
+  const msg=$('xl-msg'),ok=$('xl-ok'),fl=inp.files&&inp.files[0];
+  ok.hidden=true;pendingX=null;
+  if(!fl)return;
+  inp.value='';
+  if(typeof XLSX==='undefined'){msg.textContent='Excel読み込みの部品を読み込めませんでした。通信状況を確認してください。';return}
+  const rd=new FileReader();
+  rd.onerror=()=>{msg.textContent='ファイルを読み込めませんでした。'};
+  rd.onload=()=>{
+    try{
+      const wb=XLSX.read(rd.result,{type:'array'});
+      const ws=wb.Sheets['記録'];
+      if(!ws)throw 0;
+      const A=XLSX.utils.sheet_to_json(ws,{header:1,raw:true,defval:null});
+      const H=A[0]||[],ix=n=>H.indexOf(n),iD=ix('日付'),iO=ix('オドメーター(km)');
+      if(iD<0||iO<0)throw 0;
+      const nv=v=>(v===null||v===undefined||v===''||isNaN(+v))?null:+v;
+      const dt=v=>{
+        if(typeof v==='number')return new Date(Math.round((v-25569)*864e5)).toISOString().slice(0,10);
+        const m=String(v==null?'':v).match(/(\d{4})\D+(\d{1,2})\D+(\d{1,2})/);
+        return m?m[1]+'-'+m[2].padStart(2,'0')+'-'+m[3].padStart(2,'0'):null;
+      };
+      const c={F:ix('給油代(円)'),P:ix('ガソリン単価(円/L)'),B:ix('充電前(%)'),A:ix('充電後(%)'),R:ix('充電後の航続距離(km)'),K:ix('家の電気単価(円/kWh)'),E:ix('外充電代(円)')};
+      const g=(r,i)=>i<0?null:nv(r[i]);
+      const rows=[];
+      A.slice(1).forEach(r=>{const d=dt(r[iD]),odo=nv(r[iO]);if(d&&odo!=null)rows.push({d,odo,fuel:g(r,c.F),price:g(r,c.P),sb:g(r,c.B),sa:g(r,c.A),rg:g(r,c.R),kp:g(r,c.K),ext:g(r,c.E)})});
+      if(!rows.length)throw 0;
+      rows.sort((a,b)=>a.d<b.d?-1:a.d>b.d?1:a.odo-b.odo);
+      const M={};
+      ['集計','設定'].forEach(n=>{const w=wb.Sheets[n];if(w)XLSX.utils.sheet_to_json(w,{header:1,raw:true,defval:null}).forEach(r=>{if(r[0])M[r[0]]=r[1]})});
+      const s={...S.s},o={...S.o};
+      const put=(t,k,l)=>{if(l in M){const v=nv(M[l]);if(v!=null)t[k]=v}};
+      put(s,'batt','バッテリー容量(kWh)');put(s,'chg','充電器の出力(kW)');put(s,'home','家の電気単価の初期値(円/kWh)');put(s,'range','航続距離の初期値(km)');put(s,'hrs','0→100%の充電時間(h)');
+      put(o,'odo','記録開始時のオドメーター(km)');put(o,'dist','それまでに走った距離(km)');put(o,'fuel','それまでの給油代(円)');put(o,'price','それまでのガソリン単価(円/L)');put(o,'ext','それまでの外充電代(円)');put(o,'kwh','それまでの充電量(kWh)');
+      if('その期間の航続距離(km)' in M)o.range=nv(M['その期間の航続距離(km)']);
+      const st=dt(M['使い始めた日']);if(st)o.start=st;
+      pendingX={s,o,r:rows};
+      msg.textContent=rows.length+'件の記録（'+rows[0].d+'〜'+rows[rows.length-1].d+'）を読み込めます。今のデータは置き換わります。';
+      ok.hidden=false;
+    }catch(e){
+      msg.textContent='読み取れませんでした。このアプリで書き出したExcel（「記録」シートに「日付」「オドメーター(km)」があるもの）を選んでください。';
+    }
+  };
+  rd.readAsArrayBuffer(fl);
+}
+document.addEventListener('change',e=>{if(e.target.id==='xl-file')importXlsx(e.target)});
+document.addEventListener('click',e=>{
+  if(e.target.id==='xl')exportXlsx(e.target);
+  if(e.target.id==='xl-ok'&&pendingX){S=pendingX;pendingX=null;save();renderAll(true);const m=$('xl-msg');if(m)m.textContent='取り込みました。';}
+});
+function renderAll(full){
+  const c=calc();renderSummary(c);renderList(c);
+  if(full){renderAdd();renderSet()}
+}
+function go(t){
+  tab=t;armed=null;
+  document.querySelectorAll('.tabs button').forEach(b=>b.setAttribute('aria-selected',b.dataset.t===t));
+  $('p-list').hidden=t!=='list';$('p-add').hidden=t!=='add';$('p-set').hidden=t!=='set';
+  renderAll(false);
+  if(t==='add')renderAdd();
+  if(t==='set')renderSet();
+}
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{if(b.dataset.t==='add')editing=null;go(b.dataset.t)});
+$('p-list').onclick=e=>{const b=e.target.closest('.row');if(!b)return;editing=+b.dataset.i;go('add')};
+go('list');
+</script>
+</body>
+</html>
